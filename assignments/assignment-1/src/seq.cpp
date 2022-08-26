@@ -11,32 +11,34 @@ void fsm_read()
 }
 
 void fsm_update()
-{
+{  
+   //without dont care
   //d2 = ((!q1&&x)||(q0&&x));
   //d1 =((q1&&!q0)||(!q2&&!q1&&q0&&!x));
   //d0 =((q2)||(!q1&&!q0)||(!q1&&x)||(!q0&&x)||(q1&&q0&&!x));
   //y = ((q2&&!q0&&!x)||(q2&&q0&&x));
   
+  //with dont care
   d2=((!q1 && x) || (!q2 && q0 && x));
   d1=((!q2 && q1 && !q0) || (!q2 && !q1 && q0 && !x));
   d0=((!q1 && !q0) || (!q1 && x) || (q2 && !q1) || (!q2 && !q0 && x) || (!q2 && q1 && q0 && !x));
-  y=((q2 && !q1 && !q0 && !x) || (q2 && !q1 && q0 && x));
-  
+  //y=((q2 && !q0 ) || (q2 && x) || (q1 && q0 && x));  // in 00110 state 11 should detect 
+  y=((q2 && !q0) || (q2 && x));
   digitalWrite(2, d2);
   digitalWrite(3, d1);
   digitalWrite(4, d0);
   digitalWrite(5, y);
   
   digitalWrite(13, HIGH);
-  delay(3000);
+  delay(2000);
   digitalWrite(13, LOW);
-  delay(3000);
+  delay(2000);
   
 }
 void setup() {
-    pinMode(2, OUTPUT);  //OUTPUT for F
-    pinMode(3, OUTPUT);  
-    pinMode(4, OUTPUT);
+    pinMode(2, OUTPUT);  //OUTPUT for F1
+    pinMode(3, OUTPUT);  //OUTPUT for F1
+    pinMode(4, OUTPUT);  //OUTPUT for F1 
     pinMode(5, OUTPUT);  // to led
     
     pinMode(13, OUTPUT); //clock
@@ -55,5 +57,3 @@ fsm_read();
 fsm_update();
   
   }
-  
-  
