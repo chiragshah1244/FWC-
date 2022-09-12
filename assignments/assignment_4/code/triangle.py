@@ -1,9 +1,4 @@
-#Code by GVV Sharma (works on termux)
-#January 18, 2022
-#License
-#https://www.gnu.org/licenses/gpl-3.0.en.html
-#To verify if the given vertices belong to an isosceles triangle
-#Python libraries for math and graphics
+#program to construct a right triangle using its base and sum of other two sides
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import linalg as LA
