@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy import linalg as LA
 
-import sys                                          #for path to external scripts
+import sys                                         
 
 sys.path.insert(0,'/sdcard/IIT_H/CoordGeo')
 #local imports
@@ -16,7 +16,7 @@ import subprocess
 import shlex
 #end if
 
-#Input parameters
+#given Input parameters
 
 s=18  #sum=hypo+side=18
 b=12  #base=12
