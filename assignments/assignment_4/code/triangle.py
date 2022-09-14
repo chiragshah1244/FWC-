@@ -1,4 +1,4 @@
-#program to construct a right triangle using its base and sum of other two sides
+
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import linalg as LA
@@ -16,20 +16,30 @@ import subprocess
 import shlex
 #end if
 
-#given Input parameters
+#Input parameters
 
-s=18  #sum=hypo+side=18
+x=18  #sum=hypo+side=18
 b=12  #base=12
 
-i=((s**2)-(b**2))/(2*s)
-k= int(i)
+P=np.array([[1,1],[1,-1]])
+print("P=",P)
+
+Q=np.array([[x],[b*b/x]])
+print("Q=",Q)
+
+i=np.linalg.inv(P) @ Q
+
+c=int(i[0])
+k= int(i[1])    
+
+print("The length of vector a=",k)
+print("The length of vector c=",c)
 
 O = np.array(([0,0]))
 B = np.array(([12,0]))
 A = np.array(([0,k]))
 
 print("The coordinates of A is A",A)
-print("From given base and sum")
 print("The coordinates of O is O",O) 
 print("The coordinates of B is B",B)
 
@@ -37,14 +47,12 @@ print("The coordinates of B is B",B)
 x_OA = line_gen(O,A)
 x_AB= line_gen(A,B)
 x_BO = line_gen(B,O)
-#
-#
+
 #Plotting all lines
 plt.plot(x_OA[0,:],x_OA[1,:],label='$a$')
 plt.plot(x_AB[0,:],x_AB[1,:],label='$c$')
 plt.plot(x_BO[0,:],x_BO[1,:],label='$b$')
-#
-#
+
 #Labeling the coordinates
 tri_coords = np.vstack((O,A,B)).T
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
@@ -63,7 +71,7 @@ plt.grid() # minor
 plt.axis('equal')
 
 #if using termux
-plt.savefig('/sdcard/IIT_H/sol/matrix2112..pdf')
-subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix2112..pdf'")) 
+plt.savefig('/sdcard/IIT_H/sol/matrix2.pdf')
+subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix2.pdf'")) 
 #else
-#plt.show()
+#plt.show() #
