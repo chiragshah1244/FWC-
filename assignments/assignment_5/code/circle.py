@@ -6,7 +6,7 @@ from numpy import linalg as LA
 import random 
 
 import sys                                          #for path to external scripts
-sys.path.insert(0,'/home/chirag/matrix/CoordGeo')         #path to my scripts
+sys.path.insert(0,'/sdcard/IIT_H/CoordGeo')         #path to my scripts
 
 #local imports
 from line.funcs import *
@@ -68,7 +68,7 @@ plt.grid() # minor
 plt.axis('equal')
 
 #if using termux
-plt.savefig('/home/chirag/matrix/sol/matrix.pdf')
-#subprocess.run(shlex.split("termux-open /storage/emulated/0/github/school/ncert-vectors/defs/figs/cbse-10-3.pdf"))
+plt.savefig('/sdcard/IIT_H/sol/matrix2.pdf')
+subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix2.pdf'")) 
 #else
-plt.show()
+#plt.show() 
