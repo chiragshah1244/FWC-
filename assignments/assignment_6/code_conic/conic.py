@@ -5,7 +5,7 @@ from numpy import linalg as LA
 from pylab import *
 
 import sys, os                                          #for path to external scripts
-sys.path.insert(0,'/home/chirag/matrix/CoordGeo') 
+sys.path.insert(0,'/sdcard/IIT_H/CoordGeo') 
 
 
 #local imports
@@ -135,7 +135,8 @@ plt.grid() # minor
 plt.axis('equal')
 
 #if using termux
-#plt.savefig(os.path.join(script_dir, fig_relative))
-#subprocess.run(shlex.split("termux-open "+os.path.join(script_dir, fig_relative)))
+plt.savefig('/sdcard/IIT_H/sol/matrix3.pdf')
+subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix3.pdf'")) 
 #else
-plt.show()
+#plt.show() 
+
