@@ -136,7 +136,7 @@ plt.axis('equal')
 
 #if using termux
 plt.savefig('/sdcard/IIT_H/sol/matrix3.pdf')
-subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix3.pdf'")) 
+subprocess.run(shlex.split("termux-open '/sdcard/IIT_H/sol/matrix3.pdf'")) 
 #else
 #plt.show() 
 
