@@ -71,7 +71,7 @@ plt.grid() # minor
 plt.axis('equal')
 
 #if using termux
-plt.savefig('/sdcard/IIT_H/sol/matrix2.pdf')
-subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix2.pdf'")) 
+plt.savefig('/sdcard/IIT_H/sol/matrix1.pdf')
+subprocess.run(shlex.split("termux-open '/sdcard//IIT_H/sol/matrix1.pdf'")) 
 #else
 #plt.show() #
