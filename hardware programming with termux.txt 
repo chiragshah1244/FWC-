@@ -1,94 +1,0 @@
-
-Hardware Programming with Termux 
-
-1. #On your android device, install apkpure app  https://m.apkpure.com/apkpure/com.apkpure.aegon 
-2. #Install Termux from apkpure  
-3. #Give termux access to your user directory in android
-       termux−setup−storage 
-
-  4. #Upgrade packages
-      apt update && apt upgrade
-      apt install build−essential openssh  
-  5. #Mandatory packages
-      apt install curl git wget subversion proot proot−distro python nmap neovim ranger 
-
-  6.  #Install Ubuntu on termux 
-      proot−distro install ubuntu 
-
-  7. #login Ubuntu on termux 
-     proot−distro login ubuntu 
-
-  8. #Install PlatformIO, GCC, Python3, Pip 
-     apt update && apt upgrade
-     apt install apt−utils build−essential cmake neovim
-     apt install git wget subversion imagemagick nano
-     apt install avra avrdude gcc−avr avr−libc 
-     apt install python3−pip python3−numpy python3−scipy python3−matplotlib python3−mpmath python3−sympy python3−cvxopt 
-     python -m pip install platform
-
-9. #PlatformIO for Arduino copy and past it in platformIO folder
-      https://github.com/chiragshah1244/Future-Wireless-Communication-IITH/blob/main/Platformio/platformIO_arduino.ini
-
-  10. #PlatformIO for esp32 copy and past it in platformIO folder
-       https://github.com/chiragshah1244/Future-Wireless-Communication-IITH/blob/main/Platformio/platformIO_esp32.ini
-
-  11. #To build the code 
-        pio run
-
-  12.  #Installing Arduino Droid 
-         Install ArduinoDroid from apkpure 
-         #Open ArduinoDroid and grant all permissions 
-
-  13.  #To Flash Arduino
-         #Connect the Arduino to your phone via USB-OTG 
-         #For flashing the .hex file, in ArduinoDroid
-         #In Arduino app go to ->Actions−>Upload−>Upload Precompiled 
-         #then go to your working directory and select 
-         #pio->build->uno->firmware.hex for uploading hex file to the Arduino Uno.
-
-  14. #To Flash Esp32
-        #In ArduinoDroid app -> settings-> Board type->Esp32->DOIT ESP32 DEVKIT V1
-        #Connect the esp32 to your phone via USB-OTG 
-        #For flashing the .bin file, in esp32
-        #In Arduino app go to ->Actions−>Upload−>Upload Precompiled 
-        #then go to your working directory and select 
-        #pio->build->esp32doit-devkit—v1->firmware.bin for uploading bin file to the esp32.
-
-
-
-       
-
-        
-
-
- 
- 
-
- 
- 
- 
- 
-
-  
-
-       
-
-
-
- 
- 
- 
-
-      
-      
-
-
-      
-
- 
-  
-  
-  
- 
- 
-
